@@ -1,0 +1,5 @@
+welcome_to_rails:
+  user: eugene
+  title: "Welcome to Rails"
+  body: "Rails is such a nice web framework written in Ruby"
+  published_at: <%= 3.days.ago %>

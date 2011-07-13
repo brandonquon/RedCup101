@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Blog</title>
+  <%= stylesheet_link_tag :all %>
+  <%= javascript_include_tag 'jquery-1.4.2.min', 'rails', 'application' %>
+  <%= csrf_meta_tag %>
+</head>
+<body>
+  <div id="header">
+    <h1><%= link_to t('general.title'), root_path %></h1> 
+ <!--   <%= language_selector %> -->
+    <div id="user_bar">
+      <% if logged_in? %>
+        <%= link_to t('articles.new_article'), new_article_path %> |
+        <%= link_to t('users.edit_password'), edit_user_path(current_user) %> |
+        <%= link_to t('sessions.logout'), logout_path %>
+      <% else %>
+        <%= link_to t('sessions.login'), login_path %>
+	<%= link_to t('sessions.register'), new_user_path %>
+      <% end %>
+    </div>
+  </div>
+  <div id="main">
+    <%= content_tag(:p, notice, :class => 'notice') if notice.present? %>
+    <%= content_tag(:p, alert, :class => 'alert') if alert.present? %>
+    <%= yield %>
+  </div>
+  <div id="footer">
+    <%= t('general.footer') %> <a href="http://beginningrails.com">Beginning Rails 3</a>
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,10 @@
+<h1><%= t('articles.listing_articles') %>
+<%= link_to "Home", root_path %>
+<%= link_to "New Article", new_article_path %>
+<%= link_to "Most Popular", new_article_path %>
+<%= link_to "FAQ", new_article_path %></h1>
+</h1>
+
+<div id="articles">
+  <%= render @articles %>
+ </div>
