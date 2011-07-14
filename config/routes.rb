@@ -7,6 +7,11 @@ Blog::Application.routes.draw do |map|
   end
   resources :articles do
     member do
+      post :vote_down
+    end
+  end
+  resources :articles do
+    member do
       post :notify_friend
     end
     resources :comments

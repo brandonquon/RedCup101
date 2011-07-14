@@ -88,7 +88,6 @@ class ArticlesController < ApplicationController
     Notifier.email_friend(@article, params[:name], params[:email]).deliver
     redirect_to @article, :notice => t('articles.notify_friend_success')
   end  
-=begin
   def vote_up
     @article = Article.find(params[:id])
     if params[:vote] =='up'
@@ -96,7 +95,15 @@ class ArticlesController < ApplicationController
       redirect_to :back
     end
   end
-=end
+  def vote_down
+    @article = Article.find(params[:id])
+    if params[:vote] =='down'
+      current_user.vote_for(@article)
+      redirect_to :back
+    end
+  end
+
+=begin
   def vote_up
       begin
         current_user.vote_for(@article = Article.find(params[:id]))
@@ -105,6 +112,6 @@ class ArticlesController < ApplicationController
         render :nothing => true, :status => 404
       end
     end
-
+=end
 
 end
