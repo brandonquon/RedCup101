@@ -3,7 +3,6 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-require 'rake/dsl_definition'
 require 'rake'
 class  Rails::Application
   include Rake::DSL
