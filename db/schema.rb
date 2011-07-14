@@ -13,14 +13,14 @@
 ActiveRecord::Schema.define(:version => 20110712054521) do
 
   create_table "articles", :force => true do |t|
-    t.string   "title"
-    t.text     "body"
-    t.datetime "published_at"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "excerpt"
-    t.string   "location"
-    t.integer  "user_id"
+    t.string    "title"
+    t.text      "body"
+    t.timestamp "published_at"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
+    t.string    "excerpt"
+    t.string    "location"
+    t.integer   "user_id"
   end
 
   create_table "articles_categories", :id => false, :force => true do |t|
@@ -29,59 +29,60 @@ ActiveRecord::Schema.define(:version => 20110712054521) do
   end
 
   create_table "categories", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string    "name"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   create_table "comments", :force => true do |t|
-    t.integer  "article_id"
-    t.string   "name"
-    t.string   "email"
-    t.text     "body"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer   "article_id"
+    t.string    "name"
+    t.string    "email"
+    t.text      "body"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   create_table "profiles", :force => true do |t|
-    t.integer  "user_id"
-    t.string   "name"
-    t.date     "birthday"
-    t.text     "bio"
-    t.string   "color"
-    t.string   "twitter"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer   "user_id"
+    t.string    "name"
+    t.date      "birthday"
+    t.text      "bio"
+    t.string    "color"
+    t.string    "twitter"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   create_table "sessions", :force => true do |t|
-    t.string   "session_id", :null => false
-    t.text     "data"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string    "session_id", :null => false
+    t.text      "data"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   add_index "sessions", ["session_id"], :name => "index_sessions_on_session_id"
   add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
 
   create_table "users", :force => true do |t|
-    t.string   "email"
-    t.string   "hashed_password"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string    "email"
+    t.string    "hashed_password"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   create_table "votes", :force => true do |t|
-    t.boolean  "vote",          :default => false
-    t.integer  "voteable_id",                      :null => false
-    t.string   "voteable_type",                    :null => false
-    t.integer  "voter_id"
-    t.string   "voter_type"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.boolean   "vote",          :default => false
+    t.integer   "voteable_id",                      :null => false
+    t.string    "voteable_type",                    :null => false
+    t.integer   "voter_id"
+    t.string    "voter_type"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   add_index "votes", ["voteable_id", "voteable_type"], :name => "fk_voteables"
+  add_index "votes", ["voter_id", "voter_type", "voteable_id", "voteable_type"], :name => "uniq_one_vote_only", :unique => true
   add_index "votes", ["voter_id", "voter_type"], :name => "fk_voters"
 
 end
