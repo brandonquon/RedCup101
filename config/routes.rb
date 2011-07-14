@@ -2,6 +2,11 @@ Blog::Application.routes.draw do |map|
  root :to => "articles#index"
   resources :articles do
     member do
+      post :vote_up
+    end
+  end
+  resources :articles do
+    member do
       post :notify_friend
     end
     resources :comments

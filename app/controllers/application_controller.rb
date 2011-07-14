@@ -35,4 +35,12 @@ class ApplicationController < ActionController::Base
     def access_denied
       redirect_to login_path, :notice => t('application.access_denied') and return false
     end
+    def vote_up
+      begin
+        current_user.vote_for(@article = Article.find(params[:id]))
+        render :nothing => true, :status => 200
+      rescue ActiveRecord::RecordInvalid
+        render :nothing => true, :status => 404
+      end
+    end
 end

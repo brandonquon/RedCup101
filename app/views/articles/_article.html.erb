@@ -1,6 +1,8 @@
 <%= div_for article do %>
   <h3>
     <%= link_to article.title, article %>
+    <%= link_to('Upboats!', vote_up_article_path(article), :method  => :article) %>
+    
     <% if article.owned_by? current_user %>
       <span class='actions'>
 
