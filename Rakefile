@@ -4,8 +4,11 @@
 require File.expand_path('../config/application', __FILE__)
 
 require 'rake'
-class  Rails::Application
-  include Rake::DSL
+moduel ::Blog
+  class Application
+    include Rake::DSL
+  end
 end
+
 
 Blog::Application.load_tasks
