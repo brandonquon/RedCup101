@@ -7,12 +7,12 @@ en:
     delete: Delete
     edit: Edit
     editing: Editing
-    footer: A simple blog built for the book
+    footer:
     email_a_friend: Email a friend
     search: Search
     send_email: Send email
     show: Show
-    title: Blog
+    title: Mistakes Were Made
     update: Update
     your_name: Your name
     your_friend_email: Your friend's email
