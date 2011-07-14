@@ -3,7 +3,7 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-require 'rake/dsl_definition'
+
 require 'rake'
 module ::Blog
   class Application
@@ -11,5 +11,7 @@ module ::Blog
   end
 end
 
-
+module ::RakeFileUtils
+  extend Rake::FileUtilsExt
+end
 Blog::Application.load_tasks
