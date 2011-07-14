@@ -11,7 +11,4 @@ module ::Blog
   end
 end
 
-module ::RakeFileUtils
-  extend Rake::FileUtilsExt
-end
 Blog::Application.load_tasks
