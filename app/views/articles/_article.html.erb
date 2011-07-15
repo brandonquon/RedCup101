@@ -1,8 +1,8 @@
 <%= div_for article do %>
   <h3>
     Votes: <%= article.votes_for - article.votes_against %>    
-    <%= link_to( image_tag('up1.png'), vote_up_article_path(article), :method => :put)  %>
-    <%= link_to( image_tag('down1.png'), vote_down_article_path(article), :method => :put)  %>
+    <%= link_to( image_tag('up1.png'), vote_up_article_path(article), :method => :article)  %>
+    <%= link_to( image_tag('down1.png'), vote_down_article_path(article), :method => :article)  %>
     
 <%-#    <%= link_to('Up!', vote_up_article_path(article), :method  => :article) %>
 <%-#        <%= link_to('Down!', vote_down_article_path(article), :method  => :article) %>
