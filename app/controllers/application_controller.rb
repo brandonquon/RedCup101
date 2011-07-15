@@ -35,16 +35,4 @@ class ApplicationController < ActionController::Base
     def access_denied
       redirect_to login_path, :notice => t('application.access_denied') and return false
     end
-    def vote_up
-      if params[:vote] == 'up'
-         current_user.vote_for(@article)
-         redirect_to 'index.html'
-      end
-    end
-    def vote_down
-      if params[:vote] == 'down'
-         current_user.vote_against(@article)
-         redirect_to 'index.html'
-      end
-    end
 end

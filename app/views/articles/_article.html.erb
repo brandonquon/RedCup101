@@ -1,6 +1,6 @@
 <%= div_for article do %>
   <h3>
-    Votes <%=h @article_votes %> test    
+    Votes: <%= article.votes_for - article.votes_against %>    
     <%= link_to('Up!', vote_up_article_path(article), :method  => :article) %>
     <%= link_to('Down!', vote_down_article_path(article), :method  => :article) %>
 

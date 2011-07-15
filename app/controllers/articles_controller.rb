@@ -115,6 +115,7 @@ class ArticlesController < ApplicationController
     @vote.article = @article
     @vote.score = 1
     @article_votes = 3
+    puts article_votes: #{@article_votes}
       begin
         current_user.vote_for(@article = Article.find(params[:id]))
         redirect_to :back
