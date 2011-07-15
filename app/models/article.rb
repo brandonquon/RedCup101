@@ -5,6 +5,7 @@ class Article < ActiveRecord::Base
   default_scope order('created_at DESC')
   belongs_to :user
   has_and_belongs_to_many :categories
+  has_many :votes
   has_many :comments
   has_many :comments, :order => "created_at DESC" 
   scope :published, where("articles.published_at IS NOT NULL")

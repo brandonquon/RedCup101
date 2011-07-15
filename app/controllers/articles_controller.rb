@@ -88,30 +88,50 @@ class ArticlesController < ApplicationController
     Notifier.email_friend(@article, params[:name], params[:email]).deliver
     redirect_to @article, :notice => t('articles.notify_friend_success')
   end  
-  def vote_up
-    @article = Article.find(params[:id])
-    if params[:vote] =='up'
-      current_user.vote_for(@article)
-      redirect_to :back
-    end
-  end
-  def vote_down
-    @article = Article.find(params[:id])
-    if params[:vote] =='down'
-      current_user.vote_for(@article)
-      redirect_to :back
-    end
-  end
 
 =begin
   def vote_up
+    @article = Article.find(params[:id])
+    @user = User.find(current_user.id)
+    @vote = @article.votes.create(params[:article])
+    @vote.user = @user
+    @vote.article = @article
+    @vote.score = 1
+    respond_to do |format|
+      if @vote.save!
+        format.html {redirect_to(articles_path)}
+      else
+        format.html {redirect_to(articles_path)}
+      end
+    end 
+  end
+=end
+
+  def vote_up
+    @article = Article.find(params[:id])
+    @user = User.find(current_user.id)
+    @vote = @article.votes.create(params[:article])
+    @vote.user = @user
+    @vote.article = @article
+    @vote.score = 1
+    @article_votes = 3
       begin
         current_user.vote_for(@article = Article.find(params[:id]))
-        render :nothing => true, :status => 200
+        redirect_to :back
       rescue ActiveRecord::RecordInvalid
-        render :nothing => true, :status => 404
+        redirect_to :back
+      end
+  end
+   
+   def vote_down
+      begin
+        current_user.vote_against(@article = Article.find(params[:id]))
+        redirect_to :back
+#!        render :nothing => true, :status => 200
+      rescue ActiveRecord::RecordInvalid
+        redirect_to :back
+#!  render :nothing => true, :status => 404
       end
     end
-=end
 
 end
