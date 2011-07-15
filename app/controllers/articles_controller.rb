@@ -105,7 +105,7 @@ class ArticlesController < ApplicationController
       end
     end 
   end
-=end
+
 
   def vote_up
     @article = Article.find(params[:id])
@@ -123,6 +123,15 @@ class ArticlesController < ApplicationController
         redirect_to :back
       end
   end
+=end
+
+   def vote_up
+     begin
+       current_user.vote_for(@article = Article.find(params[:id]))
+       redirect_to :back
+     rescue ActiveRecord::RecordInvalid
+     end
+   end
    
    def vote_down
       begin
