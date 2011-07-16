@@ -12,7 +12,7 @@ en:
     search: Search
     send_email: Send email
     show: Show
-    title: Mistakes Were Made
+    title: Red Cups!
     update: Update
     your_name: Your name
     your_friend_email: Your friend's email
@@ -22,7 +22,7 @@ en:
   articles:
     editing_article: Editing Article
     listing_articles: Listing Articles
-    new_article: New Article
+    new_article: Share a cup!
     article: article
     create_success: Article was successfully created.
     update_success: Article was successfully updated.
