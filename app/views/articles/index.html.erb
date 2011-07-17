@@ -7,4 +7,10 @@
 </h1>
 
 
-<%= render @articles %>
+<% @articles.each do |article| %>
+  <p><%= render article %></p>
+  <br />
+<% end %>
+
+<%= paginate @articles %>
+<!--<%= render @articles, :spacer_template => "article_spacer" %>-->

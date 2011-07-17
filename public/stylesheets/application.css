@@ -23,7 +23,10 @@ pre {
 }
 
 p {
-  padding: 5px;
+  padding-bottom: 15px;
+  background-color: #828282;
+  opacity:0.95;
+  border-bottom: 5px solid red;
 }
 
 a {
@@ -118,6 +121,7 @@ a:hover {
   background-color: #F0F0F0;
   border: 2px solid #ccc;
   margin-right: 10px;
+
 }
 
 #main form label.check_box_label {
@@ -161,8 +165,11 @@ a:hover {
 }
 
 #main h3 {
-  padding-top: 10px;
+  padding-top: 20px;
   height: 20px;
+  border-top: 2px solid blue;
+  background-color: #828282;
+  opacity:0.95;
 }
 
 #main h3 .actions{
