@@ -23,7 +23,8 @@ pre {
 }
 
 p {
-  padding-bottom: 7px;
+  padding-left: 10px;
+  padding-bottom: 10px;
   background-color: #fff;
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
@@ -170,6 +171,7 @@ a:hover {
   border-top-left-radius: 5px;
   padding-top: 10px;
   padding-bottom: 10px;
+  padding-left: 10px;
   height: 20px;
   background-color: #fff;
 }
