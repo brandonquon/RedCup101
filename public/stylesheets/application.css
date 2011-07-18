@@ -6,6 +6,7 @@ body {
   background-image: url('/images/background.jpg');
   background-repeat: no-repeat;
   background-color: #787878; 
+  background-position: center;
   color: #333;
 }
 
@@ -91,10 +92,11 @@ a:hover {
 #main h1 {
   font-size: 16px;
   padding: 10px 0;
-  border-bottom: 1px solid #bbb;
+  border-bottom: 4px solid #bbb;
   margin-bottom: 10px;
+  background-color: white;
+  /*2nd header settings*/
 }
-
 #main table{
   margin: 0;
 }
