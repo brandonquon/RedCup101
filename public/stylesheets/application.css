@@ -4,9 +4,8 @@
 
 body { 
   background-image: url('/images/background.jpg');
-  background-repeat:no-repeat;
-  background-position:center;
-  background-color: #fff; 
+  background-repeat: no-repeat;
+  background-color: #787878; 
   color: #333;
 }
 
@@ -23,14 +22,13 @@ pre {
 }
 
 p {
-  padding-bottom: 15px;
-  background-color: #828282;
-  opacity:0.95;
-  border-bottom: 5px solid red;
+  padding: 5px;
+  background-color: #fff;
 }
 
 a {
-  color:#D95E16;
+  /*color:#D95E16;*/
+  color:#C80000;
   padding:0 2px;
   text-decoration:none;
 }
@@ -121,7 +119,6 @@ a:hover {
   background-color: #F0F0F0;
   border: 2px solid #ccc;
   margin-right: 10px;
-
 }
 
 #main form label.check_box_label {
@@ -165,11 +162,9 @@ a:hover {
 }
 
 #main h3 {
-  padding-top: 20px;
+  padding-top: 10px;
   height: 20px;
-  border-top: 2px solid blue;
-  background-color: #828282;
-  opacity:0.95;
+  background-color: #fff;
 }
 
 #main h3 .actions{
