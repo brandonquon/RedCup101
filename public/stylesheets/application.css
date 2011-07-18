@@ -3,7 +3,7 @@
 }
 
 body { 
-  background-image: url('/images/background.jpg');
+ /* background-image: url('/images/background.jpg');*/
   background-repeat: no-repeat;
   background-color: #787878; 
   background-position: center;
@@ -23,7 +23,7 @@ pre {
 }
 
 p {
-  padding: 0px;
+  padding-bottom: 7px;
   background-color: #fff;
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
@@ -169,7 +169,7 @@ a:hover {
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
   padding-top: 10px;
-  padding-bottom: 5px;
+  padding-bottom: 10px;
   height: 20px;
   background-color: #fff;
 }
