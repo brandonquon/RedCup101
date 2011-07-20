@@ -152,6 +152,7 @@ class ArticlesController < ApplicationController
         @vote.delete
         current_user.vote_against(@article = Article.find(params[:id]))
         redirect_to :back
+        end
 #!        render :nothing => true, :status => 200
       rescue ActiveRecord::RecordInvalid
 #!  render :nothing => true, :status => 404
