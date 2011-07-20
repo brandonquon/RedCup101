@@ -129,9 +129,14 @@ class ArticlesController < ApplicationController
      begin
        @article = Article.find(params[:id])
        @vote = current_user.votes.find_by_voteable_id(@article.id)
+       if @vote == nil
+       current_user.vote_for(@article = Article.find(params[:id]))
+       redirect_to :back
+       else
        @vote.delete
        current_user.vote_for(@article = Article.find(params[:id]))
        redirect_to :back
+       end
      rescue ActiveRecord::RecordInvalid
      end
    end
@@ -140,12 +145,15 @@ class ArticlesController < ApplicationController
       begin
         @article = Article.find(params[:id])
         @vote = current_user.votes.find_by_voteable_id(@article.id)
+        if @vote == nil
+        current_user.vote_for(@article = Article.find(params[:id]))
+        redirect_to :back
+        else
         @vote.delete
         current_user.vote_against(@article = Article.find(params[:id]))
         redirect_to :back
 #!        render :nothing => true, :status => 200
       rescue ActiveRecord::RecordInvalid
-        redirect_to :back
 #!  render :nothing => true, :status => 404
       end
     end
