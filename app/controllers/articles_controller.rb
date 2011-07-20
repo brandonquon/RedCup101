@@ -127,8 +127,15 @@ class ArticlesController < ApplicationController
 
    def vote_up
      begin
+       @article = Article.find(params[:id])
+       @vote = current_user.votes.find_by_voteable_id(@article.id)
+       If (@vote = true)
+       @vote.destroy
+       redirect_to :back
+       else
        current_user.vote_for(@article = Article.find(params[:id]))
        redirect_to :back
+       end
      rescue ActiveRecord::RecordInvalid
      end
    end
