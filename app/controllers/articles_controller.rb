@@ -129,19 +129,18 @@ class ArticlesController < ApplicationController
      begin
        @article = Article.find(params[:id])
        @vote = current_user.votes.find_by_voteable_id(@article.id)
-       If (@vote = true)
-       @vote.destroy
-       redirect_to :back
-       else
+       @vote.delete
        current_user.vote_for(@article = Article.find(params[:id]))
        redirect_to :back
-       end
      rescue ActiveRecord::RecordInvalid
      end
    end
    
    def vote_down
       begin
+        @article = Article.find(params[:id])
+        @vote = current_user.votes.find_by_voteable_id(@article.id)
+        @vote.delete
         current_user.vote_against(@article = Article.find(params[:id]))
         redirect_to :back
 #!        render :nothing => true, :status => 200
