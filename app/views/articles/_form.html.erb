@@ -14,11 +14,11 @@
     <%= f.label :title %><br />
     <%= f.text_field :title %>
   </div>
-<!--  <div class="field">
+  <div class="field">
     <%= f.label :location %><br />
     <%= f.text_field :location %>
   </div>
-  <div class="field">
+<!--  <div class="field">
     <%= f.label "Categories" %><br />
     <% for category in Category.all %>
       <%= check_box_tag 'article[category_ids][]', category.id, @article.category_ids.include?(category.id), :id => dom_id(category) %>
@@ -33,10 +33,10 @@
     <%= f.label :body %><br />
     <%= f.text_area :body %>
   </div>
- <!-- <div class="field">
+  <div class="field">
     <%= f.label :published_at %><br />
     <%= f.datetime_select :published_at %>
-  </div>-->
+  </div>
   <div class="actions">
     <%= submit_or_cancel(f) %>
   </div>

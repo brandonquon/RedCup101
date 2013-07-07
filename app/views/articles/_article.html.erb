@@ -18,6 +18,9 @@
     <% end %>
   </h3>
   <%= simple_format raw(article.body) %>
-  <%= simple_format raw(article.excerpt) %>
+<%#  <%= simple_format raw(article.excerpt) %>
+  <%= simple_format raw(article.location) %>
+  <%= simple_format raw(article.published_at) %>
   <%= link_to article.excerpt, article.excerpt %>
+
 <% end %>
